@@ -1,0 +1,866 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define MAX 256
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+struct Movie {
+char title[MAX];
+char gen[MAX]; //genre
+char dir[MAX]; //director
+char des[MAX]; //description
+float price;
+int year;
+char actors[4][256];
+}; 
+struct date {
+       int day;
+       int month;
+       int year;
+       };
+       struct client{
+              char namecl[256];
+             struct date rd;
+              float price;
+              };
+              struct movie{
+       char namemov[256];
+       struct client cl;
+       };
+
+int main(int argc, char *argv[]) {
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+	int yesno;
+	int tryag;
+	int sday, smonth, syear, nd, fday;
+	char movname[25];
+int a,b,c,d,e,f,g,h,ii,j,k;	
+	struct Movie m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12;
+	strcpy(m1.title, "Star Wars IV");
+	strcpy(m1.gen, "Science Fiction");
+	strcpy(m1.dir, "George Lucas");
+	strcpy(m1.des, "A young boy from Tatooine sets out on an adventure with an old Jedi named Obi-Wan Kenobi as his mentor to save Princess Leia from the ruthless Darth Vader and Destroy the Death Star built by the Empire which has the power to destroy the entire galaxy.");
+	m1.price=1.00;
+	m1.year=1977;
+	strcpy(m1.actors[0], "\nHarrison Ford, 1942, Chicago\n");
+	strcpy(m1.actors[1], "Mark Hamill, 1951, Oakland\n");
+	strcpy(m1.actors[2], "Carrie Fisher, 1956, California\n");
+	strcpy(m1.actors[3], "Alec Guinness, 1914, Maida Valley\n");
+	
+	strcpy(m2.title, "Star Wars V");
+	strcpy(m2.gen, "Sci-Fi");
+	strcpy(m2.dir, "George Lucas");
+	strcpy(m2.des, "Three years after the destruction of the Death Star, the Rebel Alliance has been driven from their former base on Yavin IV by the Galactic Empire. The Rebels, led by Princess Leia, have set up their new base on the ice planet Hoth. The Imperial fleet, led by Darth Vader, continues to hunt for the Rebels’ new base by dispatching probe droids across the galaxy.");
+	m2.price=3.00;
+	m2.year=1980;
+	strcpy(m2.actors[0], "\nHarrison Ford, 1942, Chicago\n");
+	strcpy(m2.actors[1], "Mark Hamill, 1951, Oakland\n");
+	strcpy(m2.actors[2], "Carrie Fisher, 1956, California\n");
+	strcpy(m2.actors[3], "Alec Guinness, 1914, Maida Valley\n");
+	
+	strcpy(m3.title, "Star Wars VI");
+	strcpy(m3.gen, "Science Fiction");
+	strcpy(m3.dir, "George Lucas");
+	strcpy(m3.des, "Luke Skywalker initiates a plan to rescue Han Solo from the crime lord Jabba the Hutt with the help of Princess Leia, Lando Calrissian, Chewbacca, C-3PO, and R2-D2. Leia infiltrates Jabba's palace on Tatooine, disguised as a bounty hunter with Chewbacca as her prisoner. ");
+	m3.price=2.50;
+	m3.year=1983;
+	strcpy(m3.actors[0], "\nHarrison Ford, 1942, Chicago\n");
+	strcpy(m3.actors[1], "Mark Hamill, 1951, Oakland\n");
+	strcpy(m3.actors[2], "Carrie Fisher, 1956, California\n");
+	strcpy(m3.actors[3], "Alec Guinness, 1914, Maida Valley\n");
+	
+	strcpy(m4.title, "Harry Potter 1");
+	strcpy(m4.gen, "Fantasy");
+	strcpy(m4.dir, "Chris Columbus");
+	strcpy(m4.des, "Harry Potter is a seemingly ordinary boy, living with his neglectful relatives the Dursleys, in Surrey, England. On his eleventh birthday Harry discovers from a mysterious stranger, Rubeus Hagrid, that he is actually a wizard, famous in the Wizarding World for surviving an attack by the evil Lord Voldemort when Harry was only a baby");
+	m4.price=3.50;
+	m4.year=2001;
+	strcpy(m4.actors[0], "\nDaniel Radcliffe, 1989, Hammersmith\n");
+	strcpy(m4.actors[1], "Emma Watson, 1990, Paris\n");
+	strcpy(m4.actors[2], "Rupert Grint, 1988, Harlow\n");
+	strcpy(m4.actors[3], "Mathew Lewis, 1989, Horsforth\n");
+	
+	strcpy(m5.title, "Harry Potter 2");
+	strcpy(m5.gen, "Fantasy");
+	strcpy(m5.dir, "Chris Columbus");
+	strcpy(m5.des, "Harry Potter spends the summer without receiving letters from his Hogwarts friends. In his room, Harry meets Dobby, a house-elf who warns him bad things will happen if he returns to Hogwarts, and reveals he intercepted his friends' letters. Harry chases him downstairs, where Dobby destroys a cake. The Dursleys lock Harry up, but Ron, Fred and George Weasley rescue him in their father's flying Ford Anglia.");
+	m5.price=4.50;
+	m5.year=2002;
+	strcpy(m5.actors[0], "\nDaniel Radcliffe, 1989, Hammersmith\n");
+	strcpy(m5.actors[1], "Emma Watson, 1990, Paris\n");
+	strcpy(m5.actors[2], "Rupert Grint, 1988, Harlow\n");
+	strcpy(m5.actors[3], "Mathew Lewis, 1989, Horsforth\n");
+	
+	strcpy(m6.title, "Harry Potter 3");
+	strcpy(m6.gen, "Fantasy");
+	strcpy(m6.dir, "Chris Columbus");
+	strcpy(m6.des, "Harry Potter, now aged 13, has been spending another dissatisfying summer at Privet Drive. When Uncle Vernon's sister, Marge, insults Harry's parents, he becomes angry and accidentally causes her to inflate and float away. Harry flees with his luggage, fed up with his life with the Dursleys. The Knight Bus delivers Harry to the Leaky Cauldron, where he is forgiven by Minister of Magic Cornelius Fudge for using magic outside of Hogwarts. After reuniting with his best friends Ron and Hermione, Harry learns that Sirius Black, a convicted supporter of the dark wizard Voldemort, who murdered Harry's parents, has escaped Azkaban prison, intending to kill Harry.");
+	m6.price=3.75;
+	m6.year=2004;
+	strcpy(m6.actors[0], "\nDaniel Radcliffe, 1989, Hammersmith\n");
+	strcpy(m6.actors[1], "Emma Watson, 1990, Paris\n");
+	strcpy(m6.actors[2], "Rupert Grint, 1988, Harlow\n");
+	strcpy(m6.actors[3], "Mathew Lewis, 1989, Horsforth\n");
+	
+	strcpy(m7.title, "The Avengers 1");
+	strcpy(m7.gen, "Action");
+	strcpy(m7.dir, "Joss Whedon");
+	strcpy(m7.des, "The Asgardian Loki encounters the Other, the leader of an extraterrestrial race known as the Chitauri. In exchange for retrieving the Tesseract,2 a powerful energy source of unknown potential, the Other promises Loki an army with which he can subjugate Earth. Nick Fury, director of the espionage agency S.H.I.E.L.D., and his lieutenant Agent Maria Hill arrive at a remote research facility during an evacuation, where physicist Dr. Erik Selvig is leading a research team experimenting on the Tesseract. Agent Phil Coulson explains that the object has begun radiating an unusual form of energy. The Tesseract suddenly activates and opens a wormhole, allowing Loki to reach Earth. Loki takes the Tesseract and uses his scepter to enslave Selvig and a couple of agents, including Clint Barton, to aid him in his getaway..");
+	m7.price=5.00;
+	m7.year=2012;
+	strcpy(m7.actors[0], "\nScarlett Johansson, 1984, New York\n");
+	strcpy(m7.actors[1], "Robert Downey Jr., 1965, Manhattan\n");
+	strcpy(m7.actors[2], "Chris Evans, 1981, Boston\n");
+	strcpy(m7.actors[3], "Samuel L. Jackson, 1948, Washington DC\n");
+	
+	strcpy(m8.title, "The Avengers 2");
+	strcpy(m8.gen, "Action");
+	strcpy(m8.dir, "Joss Whedon");
+	strcpy(m8.des, "In the Eastern European country of Sokovia, the Avengers – Tony Stark, Steve Rogers, Thor, Bruce Banner, Natasha Romanoff, and Clint Barton – raid a Hydra facility commanded by Baron Wolfgang von Strucker, who has been experimenting on humans using the scepter previously wielded by Loki. They encounter two of Strucker's test subjects – twins Pietro Maximoff, who has superhuman speed, and Wanda Maximoff, who can manipulate minds and project energy – and apprehend Strucker, while Stark retrieves Loki's scepter.");
+	m8.price=5.00;
+	m8.year=2015;
+	strcpy(m8.actors[0], "\nScarlett Johansson, 1984, New York\n");
+	strcpy(m8.actors[1], "Robert Downey Jr., 1965, Manhattan\n");
+	strcpy(m8.actors[2], "Chris Evans, 1981, Boston\n");
+	strcpy(m8.actors[3], "Samuel L. Jackson, 1948, Washington DC\n");
+	
+	strcpy(m9.title, "Terminator 2");
+	strcpy(m9.gen, "Action");
+	strcpy(m9.dir, "James Cameron");
+	strcpy(m9.des, "In the Eastern European country of Sokovia, the Avengers – Tony Stark, Steve Rogers, Thor, Bruce Banner, Natasha Romanoff, and Clint Barton – raid a Hydra facility commanded by Baron Wolfgang von Strucker, who has been experimenting on humans using the scepter previously wielded by Loki. They encounter two of Strucker's test subjects – twins Pietro Maximoff, who has superhuman speed, and Wanda Maximoff, who can manipulate minds and project energy – and apprehend Strucker, while Stark retrieves Loki's scepter.");
+	m9.price=5.25;
+	m9.year=2015;
+	strcpy(m9.actors[0], "\nArnold Schwarzenegger, 1947, Thal\n");
+	strcpy(m9.actors[1], "Edward Furlong, 1977, California\n");
+	strcpy(m9.actors[2], "Linda Hamilton, 1956, Maryland\n");
+	strcpy(m9.actors[3], "Robert Patrick, 1958, Georgia\n");
+	
+	strcpy(m10.title, "Doctor Strange");
+	strcpy(m10.gen, "Sci-Fi");
+	strcpy(m10.dir, "Scott Derrickson");
+	strcpy(m10.des, "In the Eastern European country of Sokovia, the Avengers – Tony Stark, Steve Rogers, Thor, Bruce Banner, Natasha Romanoff, and Clint Barton – raid a Hydra facility commanded by Baron Wolfgang von Strucker, who has been experimenting on humans using the scepter previously wielded by Loki. They encounter two of Strucker's test subjects – twins Pietro Maximoff, who has superhuman speed, and Wanda Maximoff, who can manipulate minds and project energy – and apprehend Strucker, while Stark retrieves Loki's scepter.");
+	m10.price=4.00;
+	m10.year=2016;
+	strcpy(m10.actors[0], "\nBenedict Cumberbatch, 1976, Hammersmith\n");
+	strcpy(m10.actors[1], "Chiwetel Ejiofor, 1977, Los Angeles\n");
+	strcpy(m10.actors[2], "Rachel McAdams, 1978, Ontario\n");
+	strcpy(m10.actors[3], "Benedict Wong, 1971, Eccles\n");
+	
+	
+	int choice;
+	
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	___________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+struct client clients[3];
+ char name[60];
+	FILE *swIVDVD, *swVDVD, *swVIDVD, *hp1DVD, *hp2DVD, *hp3DVD, *AV1DVD, *AV2DVD, *TM2DVD, *DSDVD;
+	FILE *swIVON, *swVON, *swVION, *hp1ON, *hp2ON, *hp3ON, *AV1ON, *AV2ON, *TM2ON, *DSON;
+	int aa,bb,cc,dd,ee,ff,gg,hh,jj,kk;
+	
+	
+int i;
+
+
+
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+	
+	printf(" 1. DVD Movies\n 2. Rentals per DVD Movie\n 3. Online Movies\n 4. Rentals per Online Movie\n 5. DvD Availability\n 6. Online Movies rented per Client\n 7. Exit\n");
+	printf("Choose your option:\n");
+	scanf("%i", &choice);
+	switch(choice){
+
+	case 1:
+	
+
+printf ("INTRODUCE THE TITLE OF THE MOVIE:\n");
+scanf (" %[^\n]1", movname);
+a= strcmp(m1.title, movname);
+b= strcmp(m2.title, movname);
+c= strcmp(m3.title, movname);
+d= strcmp(m4.title, movname);
+e= strcmp(m5.title, movname);
+f= strcmp(m6.title, movname);
+g= strcmp(m7.title, movname);
+h= strcmp(m8.title, movname);
+ii= strcmp(m9.title, movname);
+j= strcmp(m10.title, movname);
+
+
+if (a==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m1.price);
+printf ("Total price: %.2f\n", m1.price*nd);
+
+}else if (b==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m2.price);
+printf ("Total price: %.2f\n", m2.price*nd);
+
+}else if (c==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m3.price);
+printf ("Total price: %.2f\n", m3.price*nd);
+
+}else if (d==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m4.price);
+printf ("Total price: %.2f\n", m4.price*nd);
+
+}else if (e==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m5.price);
+printf ("Total price: %.2f\n", m5.price*nd);
+
+}else if (f==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m6.price);
+printf ("Total price: %.2f\n", m6.price*nd);
+
+}else if (g==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m7.price);
+printf ("Total price: %.2f\n", m7.price*nd);
+
+}else if (h==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m8.price);
+printf ("Total price: %.2f\n", m8.price*nd);
+
+}else if (ii==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m9.price);
+printf ("Total price: %.2f\n", m9.price*nd);
+
+}else if (j==0) {
+printf ("INTRODUCE THE START DATE:\n");
+scanf (" %i/%i/%i", &sday, &smonth, &syear);
+printf ("Enter the number of days\n");
+scanf ("%i", &nd);
+printf ("Price per day: %.2f\n", m10.price);
+printf ("Total price: %.2f\n", m10.price*nd);
+}else{
+printf("There is not available DVD for the movie Star wars I according to the specified dates.");
+}
+
+char yn [2];
+printf ("Do you wish to continue?\n");
+scanf(" %s", yn);
+yesno=strcmp(yn, "n");
+if (yesno==0) {
+printf("thank you for using www.movieclubrentourshit.com");
+return 0;
+}
+
+
+char user [MAX];
+int cardnum, DD, MM, YYYY;
+
+if (a==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m1.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (b==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m2.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (c==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m3.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (d==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m4.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (e==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m5.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (f==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m6.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (g==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m7.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (h==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m8.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (ii==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m9.price*nd);
+printf("User Name: %s\n", user);
+printf("thank you for using www.movieclubrentourshit.com");
+
+}else if (j==0) {
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+fday=sday+nd; 
+printf("Great! The payment was succesful, you have to return the DVD movie: %s, on %i/%i/%i\n", movname, fday, smonth, syear);
+printf("Movie name: %s\n", movname);
+printf("Start date: %i/%i/%i\n", sday, smonth, syear);
+printf("End time date: %i/%i/%i\n", fday, smonth, syear);
+printf ("Total price: %.2f\n", m10.price*nd);
+printf("User Name: %s\n", user);
+
+printf("thank you for using www.movieclubrentourshit.com");
+
+char yn [2];
+printf ("Do you wish to continue?\n");
+scanf(" %s", yn);
+yesno=strcmp(yn, "n");
+if (yesno==0) {
+printf("thank you for using www.movieclubrentourshit.com");
+return 0;
+}
+	main(argc, argv);
+break;
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+//	_____________________________________________________________________________________________________________________________________________________________________________________
+case 2:
+	if (tryag==0){
+	
+	printf ("Name of the movie?\n");
+	scanf (" %[^\n]", name);
+	
+	aa=strcmp(name, "Star Wars IV");
+	bb=strcmp(name, "Star Wars V");
+	cc=strcmp(name, "Star Wars VI");
+	dd=strcmp(name, "Harry Potter 1");
+	ee=strcmp(name, "Harry Potter 2");
+	ff=strcmp(name, "Harry Potter 3");
+	gg=strcmp(name, "The Avengers 1");
+	hh=strcmp(name, "The Avengers 2");	
+	jj=strcmp(name, "Terminator 2");
+	kk=strcmp(name, "Doctor Strange");
+	
+	if (aa==0){
+    swIVDVD = fopen ("swIV_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(swIVDVD, "%s", clients[i].namecl);
+      fscanf(swIVDVD, "%i", &clients[i].rd.day);
+      fscanf(swIVDVD, "%i", &clients[i].rd.month);
+      fscanf(swIVDVD, "%i", &clients[i].rd.year);
+      fscanf(swIVDVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }
+      fclose(swIVDVD);
+  }else if (bb==0){
+  	swVDVD = fopen ("swV_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(swVDVD, "%s", clients[i].namecl);
+      fscanf(swVDVD, "%i", &clients[i].rd.day);
+      fscanf(swVDVD, "%i", &clients[i].rd.month);
+      fscanf(swVDVD, "%i", &clients[i].rd.year);
+      fscanf(swVDVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(swVDVD);
+  } else if (cc==0){
+    swVIDVD = fopen ("swVI_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(swVIDVD, "%s", clients[i].namecl);
+      fscanf(swVIDVD, "%i", &clients[i].rd.day);
+      fscanf(swVIDVD, "%i", &clients[i].rd.month);
+      fscanf(swVIDVD, "%i", &clients[i].rd.year);
+      fscanf(swVIDVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(swVIDVD);
+  } else if (dd==0){
+	hp1DVD = fopen ("hp1_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(hp1DVD, "%s", clients[i].namecl);
+      fscanf(hp1DVD, "%i", &clients[i].rd.day);
+      fscanf(hp1DVD, "%i", &clients[i].rd.month);
+      fscanf(hp1DVD, "%i", &clients[i].rd.year);
+      fscanf(hp1DVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }     fclose(hp1DVD);
+  } else if (ee==0){
+	hp2DVD = fopen ("hp2_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(hp2DVD, "%s", clients[i].namecl);
+      fscanf(hp2DVD, "%i", &clients[i].rd.day);
+      fscanf(hp2DVD, "%i", &clients[i].rd.month);
+      fscanf(hp2DVD, "%i", &clients[i].rd.year);
+      fscanf(hp2DVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }  fclose(hp2DVD);
+  } else if (ff==0){
+	hp3DVD = fopen ("hp3_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(hp3DVD, "%s", clients[i].namecl);
+      fscanf(hp3DVD, "%i", &clients[i].rd.day);
+      fscanf(hp3DVD, "%i", &clients[i].rd.month);
+      fscanf(hp3DVD, "%i", &clients[i].rd.year);
+      fscanf(hp3DVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      } fclose(hp3DVD);
+  } else if (gg==0){
+	AV1DVD = fopen ("AV1_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(AV1DVD, "%s", clients[i].namecl);
+      fscanf(AV1DVD, "%i", &clients[i].rd.day);
+      fscanf(AV1DVD, "%i", &clients[i].rd.month);
+      fscanf(AV1DVD, "%i", &clients[i].rd.year);
+      fscanf(AV1DVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      } fclose(AV1DVD);
+  } else if (hh==0){
+AV2DVD = fopen ("AV2_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(AV2DVD, "%s", clients[i].namecl);
+      fscanf(AV2DVD, "%i", &clients[i].rd.day);
+      fscanf(AV2DVD, "%i", &clients[i].rd.month);
+      fscanf(AV2DVD, "%i", &clients[i].rd.year);
+      fscanf(AV2DVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(AV2DVD);
+  } else if (jj==0){
+	TM2DVD = fopen ("TM2_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(TM2DVD, "%s", clients[i].namecl);
+      fscanf(TM2DVD, "%i", &clients[i].rd.day);
+      fscanf(TM2DVD, "%i", &clients[i].rd.month);
+      fscanf(TM2DVD, "%i", &clients[i].rd.year);
+      fscanf(TM2DVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(TM2DVD);
+  } else if (kk==0){
+  	DSDVD = fopen ("DS_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(DSDVD, "%s", clients[i].namecl);
+      fscanf(DSDVD, "%i", &clients[i].rd.day);
+      fscanf(DSDVD, "%i", &clients[i].rd.month);
+      fscanf(DSDVD, "%i", &clients[i].rd.year);
+      fscanf(DSDVD, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }
+    fclose(DSDVD);
+  } else {
+  	printf ("INTRODUCE A VALID NAME!!");
+  }
+
+ 
+  char retry[2];
+  printf("do you want to try again?");
+  scanf("%i", &retry);
+  tryag=strcmp(retry, "y");
+
+
+ 	
+ }
+  
+  	
+  
+  
+  yn [2];
+printf ("Do you wish to continue?\n");
+scanf(" %s", yn);
+yesno=strcmp(yn, "n");
+if (yesno==0) {
+printf("thank you for using www.movieclubrentourshit.com");
+return 0;
+}
+	main(argc, argv);
+  
+  case 3:
+  	
+printf ("INTRODUCE THE TITLE OF THE MOVIE:\n");
+scanf (" %[^\n]1", movname);
+a= strcmp(m1.title, movname);
+b= strcmp(m2.title, movname);
+c= strcmp(m3.title, movname);
+d= strcmp(m4.title, movname);
+e= strcmp(m5.title, movname);
+f= strcmp(m6.title, movname);
+g= strcmp(m7.title, movname);
+h= strcmp(m8.title, movname);
+ii= strcmp(m9.title, movname);
+j= strcmp(m10.title, movname);
+
+
+if (a==0) {
+printf ("Price: %.2f\n", m1.price);
+
+}else if (b==0) {
+printf ("Price: %.2f\n", m2.price);
+
+}else if (c==0) {
+printf ("Price: %.2f\n", m3.price);
+
+}else if (d==0) {
+printf ("Price: %.2f\n", m4.price);
+
+}else if (e==0) {
+printf ("Price: %.2f\n", m5.price);
+
+}else if (f==0) {
+printf ("Price: %.2f\n", m6.price);
+
+}else if (g==0) {
+printf ("Price: %.2f\n", m7.price);
+
+}else if (h==0) {
+printf ("Price: %.2f\n", m8.price);
+
+}else if (ii==0) {
+printf ("Price: %.2f\n", m9.price);
+
+}else if (j==0) {
+printf ("Price: %.2f\n", m10.price);}
+
+yn [2];
+printf ("Do you wish to continue?\n");
+scanf(" %s", yn);
+yesno=strcmp(yn, "n");
+if (yesno==0) {
+printf("thank you for using www.movieclubrentourshit.com");
+return 0;
+}
+
+user [MAX];
+cardnum, DD, MM, YYYY;
+
+printf("Enter your complete name:\n");
+scanf(" %[^\n]", user);
+printf("Enter your card number:\n");
+scanf(" %i", &cardnum);
+printf("Enter your expiration date(DD/MM/YYYY):\n");
+scanf("%i/%i/%i", &DD, &MM, &YYYY);
+printf("thank you for using www.movieclubrentourshit.com");
+
+
+printf("Great! The payment was successful. Now you are able to watch %s movie for 24h. Enjoy!", movname);
+break;
+
+
+
+case 4:
+printf ("Name of the movie?\n");
+	scanf (" %[^\n]", name);
+	
+	aa=strcmp(name, "Star Wars IV");
+	bb=strcmp(name, "Star Wars V");
+	cc=strcmp(name, "Star Wars VI");
+	dd=strcmp(name, "Harry Potter 1");
+	ee=strcmp(name, "Harry Potter 2");
+	ff=strcmp(name, "Harry Potter 3");
+	gg=strcmp(name, "The Avengers 1");
+	hh=strcmp(name, "The Avengers 2");	
+	jj=strcmp(name, "Terminator 2");
+	kk=strcmp(name, "Doctor Strange");
+	
+	if (aa==0){
+    swIVON = fopen ("swIV_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(swIVON, "%s", clients[i].namecl);
+      fscanf(swIVON, "%i", &clients[i].rd.day);
+      fscanf(swIVON, "%i", &clients[i].rd.month);
+      fscanf(swIVON, "%i", &clients[i].rd.year);
+      fscanf(swIVON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }
+      fclose(swIVON);
+  }else if (bb==0){
+  	swVON = fopen ("swV_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(swVON, "%s", clients[i].namecl);
+      fscanf(swVON, "%i", &clients[i].rd.day);
+      fscanf(swVON, "%i", &clients[i].rd.month);
+      fscanf(swVON, "%i", &clients[i].rd.year);
+      fscanf(swVON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(swVON);
+  } else if (cc==0){
+    swVION = fopen ("swVI_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(swVION, "%s", clients[i].namecl);
+      fscanf(swVION, "%i", &clients[i].rd.day);
+      fscanf(swVION, "%i", &clients[i].rd.month);
+      fscanf(swVION, "%i", &clients[i].rd.year);
+      fscanf(swVION, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(swVION);
+  } else if (dd==0){
+	hp1ON = fopen ("hp1_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(hp1ON, "%s", clients[i].namecl);
+      fscanf(hp1ON, "%i", &clients[i].rd.day);
+      fscanf(hp1ON, "%i", &clients[i].rd.month);
+      fscanf(hp1ON, "%i", &clients[i].rd.year);
+      fscanf(hp1ON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(hp1ON);
+  } else if (ee==0){
+	hp2ON = fopen ("hp2_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(hp2ON, "%s", clients[i].namecl);
+      fscanf(hp2ON, "%i", &clients[i].rd.day);
+      fscanf(hp2ON, "%i", &clients[i].rd.month);
+      fscanf(hp2ON, "%i", &clients[i].rd.year);
+      fscanf(hp2ON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }  fclose(hp2ON);
+  } else if (ff==0){
+	hp3ON = fopen ("hp3_DVD.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(hp3ON, "%s", clients[i].namecl);
+      fscanf(hp3ON, "%i", &clients[i].rd.day);
+      fscanf(hp3ON, "%i", &clients[i].rd.month);
+      fscanf(hp3ON, "%i", &clients[i].rd.year);
+      fscanf(hp3ON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      } fclose(hp3ON);
+  } else if (gg==0){
+	AV1ON = fopen ("AV1_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf ("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(AV1ON, "%s", clients[i].namecl);
+      fscanf(AV1ON, "%i", &clients[i].rd.day);
+      fscanf(AV1ON, "%i", &clients[i].rd.month);
+      fscanf(AV1ON, "%i", &clients[i].rd.year);
+      fscanf(AV1ON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      } fclose(AV1ON);
+  } else if (hh==0){
+AV2ON = fopen ("AV2_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(AV2ON, "%s", clients[i].namecl);
+      fscanf(AV2ON, "%i", &clients[i].rd.day);
+      fscanf(AV2ON, "%i", &clients[i].rd.month);
+      fscanf(AV2ON, "%i", &clients[i].rd.year);
+      fscanf(AV2ON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(AV2ON);
+  } else if (jj==0){
+	TM2ON = fopen ("TM2_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(TM2ON, "%s", clients[i].namecl);
+      fscanf(TM2ON, "%i", &clients[i].rd.day);
+      fscanf(TM2ON, "%i", &clients[i].rd.month);
+      fscanf(TM2ON, "%i", &clients[i].rd.year);
+      fscanf(TM2ON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }fclose(TM2DVD);
+  } else if (kk==0){
+  	DSON = fopen ("DS_ON.txt", "r");
+	printf ("\nRentals of %s in November\n\n", name);
+	printf("Client's name   Start Date   Total Price\n");
+	printf("________________________________________\n");
+for (i=0; i<3; i++){
+      fscanf(DSON, "%s", clients[i].namecl);
+      fscanf(DSON, "%i", &clients[i].rd.day);
+      fscanf(DSON, "%i", &clients[i].rd.month);
+      fscanf(DSON, "%i", &clients[i].rd.year);
+      fscanf(DSON, "%f", &clients[i].price);
+      printf("\n %s    %i/%i/%i       %.2f\n", clients[i].namecl, clients[i].rd.day, clients[i].rd.month, clients[i].rd.year, clients[i].price);
+      }
+    fclose(DSON);
+  } else {
+  	printf ("INTRODUCE A VALID NAME!!");
+  }	
+
+	break;
+	return 0;
+}}}
