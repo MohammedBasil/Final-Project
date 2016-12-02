@@ -1,0 +1,3 @@
+     Shakiratrajo     3 11 16        12
+     Puñaladabazo     9 11 16         6
+     Terajopulmon    10 11 16         5
